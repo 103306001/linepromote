@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.example.tommylin.linrpromote"
+        minSdkVersion 26
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation files('libs/line-bot-spring-boot-1.15.0.jar')
+    implementation files('libs/line-bot-servlet-1.15.0.jar')
+    implementation files('libs/line-bot-model-1.15.0.jar')
+    implementation files('libs/line-bot-api-client-1.15.0.jar')
+    implementation 'org.springframework:spring-context:5.0.5.RELEASE'
+    implementation files('libs/spring-web-5.0.5.RELEASE.jar')
+    implementation files('libs/spring-webmvc-5.0.5.RELEASE.jar')
+    implementation files('libs/lombok.jar')
+    implementation files('libs/byte-streams-0.1.11.jar')
+    implementation files('libs/com.google.guava_1.6.0.jar')
+    implementation files('libs/apache-logging-log4j.jar')
+    implementation files('libs/spring-boot-2.0.1.RELEASE.jar')
+    implementation files('libs/spring-boot-autoconfigure-2.0.1.RELEASE.jar')
+}
